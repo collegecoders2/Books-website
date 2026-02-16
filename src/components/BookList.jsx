@@ -1,9 +1,17 @@
-import React from 'react'
+import BookCard from "./BookCard";
 
-const BookList = () => {
+function BookList({ books, onBookClick }) {
   return (
-    <div>BookList</div>
-  )
+    <div className="books-grid">
+      {books.map((book) => (
+        <BookCard
+          key={book.id}
+          book={book}
+          onClick={onBookClick}
+        />
+      ))}
+    </div>
+  );
 }
 
-export default BookList
+export default BookList;
